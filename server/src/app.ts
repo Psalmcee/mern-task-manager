@@ -35,12 +35,13 @@ io.on('connection', (socket) => {
         console.log(`User disconnected: ${socket.id}`)
     }) 
    io.emit('server_connected', 'Connected to server ✔')
-    */
+    */ 
 })
 
 
 app.get('/', (req: Request, res: Response) => {
-    res.json({message: `Connected to server 👍`})
+    res.send("Mern Task Manager");
+    res.json({message: `Connected to server 👍`});
 })
 
 app.use('/auth', authRouter);
