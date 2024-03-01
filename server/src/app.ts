@@ -40,8 +40,8 @@ io.on('connection', (socket) => {
 
 
 app.get('/', (req: Request, res: Response) => {
-    res.send("Mern Task Manager");
-    res.json({message: `Connected to server 👍`});
+    res.send("Mern Task Manager..");
+    //res.json({message: `Connected to server 👍`});
 })
 
 app.use('/auth', authRouter);
