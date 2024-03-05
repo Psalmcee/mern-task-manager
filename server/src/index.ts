@@ -7,14 +7,13 @@ import dotenv from 'dotenv'
 import { authenticationMiddleware, errorHandlerMiddleware, notFoundMiddleware } from './middlewares'
 
 dotenv.config()
+app.use(cors())
 
 const port: string | number = process.env.PORT || 5555
 
 app.use(express.static('./public'))
-
 app.use(express.urlencoded({ extended: false}))
 app.use(express.json());
-app.use(cors())
 
 import http from 'http'
 import { Server } from 'socket.io'
