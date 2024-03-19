@@ -56,7 +56,7 @@ const start = () => __awaiter(void 0, void 0, void 0, function* () {
     yield (0, db_1.connectDB)(process.env.MONGO_URI);
     server.listen(port, () => {
         console.log(`server is running on port ${port}...
-🚀@ http://localhost:${port}`);
+    🚀@ http://localhost:${port}`);
     });
 });
 start();
