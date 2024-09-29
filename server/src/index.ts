@@ -20,23 +20,6 @@ import { Server } from 'socket.io'
 
 const server = http.createServer(app)
 
-export const io = new Server(server, {
-    cors: {
-        origin: 'http://localhost:3000',
-        methods: ['GET', 'POST']
-    }
-})
-
-io.on('connection', (socket) => {
-    console.log(`User connected: ${socket.id}`)
-
-    /* socket.on('disconnect', () => {
-        console.log(`User disconnected: ${socket.id}`)
-    }) 
-   io.emit('server_connected', 'Connected to server ✔')
-    */ 
-})
-
 
 app.get('/', (req: Request, res: Response) => {
     //res.send("Mern Task Manager..");

@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.io = exports.app = void 0;
+exports.app = void 0;
 const express_1 = __importDefault(require("express"));
 const routes_1 = require("./routes");
 exports.app = (0, express_1.default)();
@@ -27,22 +27,7 @@ exports.app.use(express_1.default.static('./public'));
 exports.app.use(express_1.default.urlencoded({ extended: false }));
 exports.app.use(express_1.default.json());
 const http_1 = __importDefault(require("http"));
-const socket_io_1 = require("socket.io");
 const server = http_1.default.createServer(exports.app);
-exports.io = new socket_io_1.Server(server, {
-    cors: {
-        origin: 'http://localhost:3000',
-        methods: ['GET', 'POST']
-    }
-});
-exports.io.on('connection', (socket) => {
-    console.log(`User connected: ${socket.id}`);
-    /* socket.on('disconnect', () => {
-        console.log(`User disconnected: ${socket.id}`)
-    })
-   io.emit('server_connected', 'Connected to server ✔')
-    */
-});
 exports.app.get('/', (req, res) => {
     //res.send("Mern Task Manager..");
     res.json({ message: `Connected to server 👍` });
