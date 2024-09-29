@@ -21,7 +21,6 @@ const Home = () => {
   return (
     <div>
       {!data ? <p>Connecting to server...</p> : data}
-      {/* <h6>Hello {}</h6> */}
     </div>
   );
 };

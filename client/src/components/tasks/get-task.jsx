@@ -47,11 +47,11 @@ export default function GetTask() {
   }
 
   const bgBoxStyle = { 
-    color: "red", border: "solid #507661", marginTop: "8rem", marginLeft: "32px", marginRight: "32px", padding: "16px", paddingBottom: "16px", backgroundColor: "#507661", borderRadius: "8px", boxShadow: "0px 0px 8px #507661", display: "flex", flexDirection: "column" 
+    width: "400px", color: "red", border: "solid #507661", marginTop: "8rem", marginLeft: "32px", marginRight: "32px", padding: "16px", paddingBottom: "16px", backgroundColor: "#507661", borderRadius: "8px", boxShadow: "0px 0px 8px #507661", display: "flex", flexDirection: "column" 
   }
 
   const boxStyle = {
-    display: "flex", flexDirection: "column", fontSize: "large",margin: "12px", margin: "0px 24px", padding: "16px", paddingBottom: "16px", color: "white", backgroundColor: "#765052", border: "solid #507661", borderRadius: "8px", boxShadow: "0px 0px 8px #507661", marginTop: "16px" , marginLeft: "16px", marginRight: "16px"  , padding: "16px", paddingBottom: "16px"
+    display: "flex", flexDirection: "column", fontSize: "large", margin: "0px 24px", padding: "16px", paddingBottom: "16px", color: "white", backgroundColor: "#765052", border: "solid #507661", borderRadius: "8px", boxShadow: "0px 0px 8px #507661"
 }
   return (
 

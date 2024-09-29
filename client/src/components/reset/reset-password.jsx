@@ -48,22 +48,30 @@ export default function ResetPassword() {
     };
 
 
-    const bgBoxStyle = {
-        color: "red", border: "solid #507661", marginTop: "32px", display: "flex", flexDirection: "column" 
-    }
+        const bgBoxStyle = {
+            display: "flex", flexDirection: "column", width: "400px", color: "red", border: " solid #f5f5f5", marginTop: "8rem", marginLeft: "8rem 1rem 0rem", padding: "16px", backgroundColor: "#f5f5f5", borderRadius: "8px", boxShadow: "0px 0px 8px #f5f5f5" 
+        }
+        const formStyle = {
+            display: "flex", flexDirection: "column", margin: "12px", padding: "16px", paddingBottom: "16px", color: "black", backgroundColor: "#f5f5f5"
+        }
 
-    const boxStyle = {
-        display: "flex", flexDirection: "column", margin: "12px", padding: "16px", paddingBottom: "16px", backgroundColor: "#507661"
-    }
+        const labelStyle = {
+            display: "block", marginBottom: "5px"
+          }
+        
+          const inputStyle = {
+            width: "95%", padding: "10px", border: "1px solid #ccc", borderRadius: "3px"
+          }
+
         return (
             <div style={bgBoxStyle}>
-                <h1>Reset Password</h1>
+                <h1 style={{ color: "red" }}>Reset Password</h1> 
                 <p>Please enter your new password.</p>
-                <form onSubmit={submitHandler} style={boxStyle}>
-                    <label>New Password:</label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <label>Confirm Password:</label>
-                    <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
+                <form onSubmit={submitHandler} style={formStyle}>
+                    <label style={labelStyle}>New Password:</label>
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} style={inputStyle}/>
+                    <label style={labelStyle}>Confirm Password:</label>
+                    <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} style={inputStyle}/>
                     <button type="submit">Reset Password</button>
                     {error && <p>{error}</p>}
                     {success && <p>{success}</p>}

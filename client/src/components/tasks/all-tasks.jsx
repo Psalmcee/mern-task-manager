@@ -3,8 +3,21 @@ import { Link } from "react-router-dom";
 
 export default function AllTasks() {
   const [tasks, setTasks] = useState([]);
+
+  const bgBoxStyle = { 
+    width: "400px", color: "red", border: "solid #507661", marginTop: "8rem", marginLeft: "32px", marginRight: "32px", padding: "16px", paddingBottom: "16px", backgroundColor: "#507661", borderRadius: "8px", boxShadow: "0px 0px 8px #507661", display: "flex", flexDirection: "column" 
+  }
+
+  const boxStyle = {
+    display: "flex", flexDirection: "column", fontSize: "large", margin: "0px 24px", padding: "16px", paddingBottom: "16px", color: "white", backgroundColor: "#765052", border: "solid #507661", borderRadius: "8px", boxShadow: "0px 0px 8px #507661"
+  }
+
+  const navButton = {
+    textDecoration: "none", fontSize: "1.5rem"
+  }
+
   
-  const username = localStorage.getItem('name');
+  //const username = localStorage.getItem('name');
   useEffect(() => {
     const fetchTasks = async () => {
       try {
@@ -39,27 +52,20 @@ export default function AllTasks() {
 
   if (tasks.length === 0) {
     return (
-      <div>
-        <p> No tasks available, please add task</p>
-    <Link to={"/create-task"}><h5>Create Task</h5></Link>
+      <div style={{ display: "flex", flexDirection: "column", marginTop: "5rem"}}>
+        <h3> No task available, click below to add a new task</h3>
+    <Link to={"/create-task"} style={navButton}><h5>Create a New Task</h5></Link>
       </div>
     )
   }
 
-  const bgBoxStyle = { 
-    color: "red", border: "solid #507661", marginTop: "8rem", marginLeft: "32px", marginRight: "32px", padding: "16px", paddingBottom: "16px", backgroundColor: "#507661", borderRadius: "8px", boxShadow: "0px 0px 8px #507661", display: "flex", flexDirection: "column" 
-  }
-
-  const boxStyle = {
-    display: "flex", flexDirection: "column", fontSize: "large",margin: "12px", margin: "0px 24px", padding: "16px", paddingBottom: "16px", color: "white", backgroundColor: "#765052", border: "solid #507661", borderRadius: "8px", boxShadow: "0px 0px 8px #507661", marginTop: "16px" , marginLeft: "16px", marginRight: "16px"  , padding: "16px", paddingBottom: "16px"
-  }
 
   return (
     <div style={bgBoxStyle}>
       <div style={{ width: "100%", color: "white", display: "flex", justifyContent: "right" }}>
         <div style={{ width: "max-content", color: "white", display: "flex", alignItems: "center" }}>
-          <Link to={'/dashboard'}>
-            <button style={{ padding: "4px 12px", paddingTop: "8px", color: "white", paddingBottom: "8px", backgroundColor: "#4A0404", border: "none", borderRadius: "4px", fontSize: "large", }}>Dashboard</button>
+          <Link to={'/dashboard'} >
+            <button style={{ padding: "4px 12px", paddingTop: "8px", color: "white", paddingBottom: "8px", backgroundColor: "#4A0404", border: "none", borderRadius: "4px", fontSize: "large" }}>Dashboard</button>
           </Link>
         </div>
       </div>

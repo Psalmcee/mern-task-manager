@@ -1,18 +1,11 @@
 .App {
   text-align: center;
-  padding: 5rem;
-  padding-bottom: 100vh;
-  background-color: wheat;
   width: auto;
   height: auto;
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Components {
+  display: flex;
+  justify-content: center;
+  
 }

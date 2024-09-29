@@ -44,8 +44,8 @@ exports.io.on('connection', (socket) => {
     */
 });
 exports.app.get('/', (req, res) => {
-    res.send("Mern Task Manager..");
-    //res.json({message: `Connected to server 👍`});
+    //res.send("Mern Task Manager..");
+    res.json({ message: `Connected to server 👍` });
 });
 exports.app.use('/auth', routes_1.authRouter);
 exports.app.use('/tasks', middlewares_1.authenticationMiddleware, routes_1.taskRouter);

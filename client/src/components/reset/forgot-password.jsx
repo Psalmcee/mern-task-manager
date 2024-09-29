@@ -29,23 +29,35 @@ export default function ForgotPassword() {
     }
 
     const bgBoxStyle = {
-        color: "red", border: "solid #507661", marginTop: "8rem", marginLeft: "32px", marginRight: "32px", padding: "16px", paddingBottom: "16px", backgroundColor: "#507661", borderRadius: "8px", boxShadow: "0px 0px 8px #507661", display: "flex", flexDirection: "column" 
+        display: "flex", flexDirection: "column", width: "400px", border: "solid #f5f5f5", margin: "8rem 1rem 0rem", padding: "16px", backgroundColor: "#f5f5f5", borderRadius: "8px", boxShadow: "0px 0px 8px #f5f5f5" 
+    }
+    const formStyle = {
+        display: "flex", flexDirection: "column", margin: "12px", padding: "16px", paddingBottom: "16px", color: "black", backgroundColor: "#f5f5f5"
     }
 
-    const boxStyle = {
-        display: "flex", flexDirection: "column", margin: "12px", padding: "16px", paddingBottom: "16px", color: "black", backgroundColor: "#507661"
-    }
+    const labelStyle = {
+        display: "block", marginBottom: "5px"
+      }
+    
+      const inputStyle = {
+        width: "95%", padding: "10px", border: "1px solid #4caf50", borderRadius: "5px"
+      }
+
+      const submitButton = {
+        display: "block", margin: "10px 0", padding: "10px 20px", backgroundColor: "#4caf50", color: "#fff", border: "none", borderRadius: "5px", cursor: "pointer"
+      }
+      
     return (
         <div style={bgBoxStyle}>
-            <h1>Forgot Password</h1>
-           <div style={boxStyle}>
-           <p>Enter your email address and we'll send you a link to reset your password.</p>
-            <form onSubmit={handleSubmit}>
-                <label>Email: </label>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <button type="submit">Send Reset Link</button>   
-            </form>
-            {error && <p>{error}</p> }
+            <h1 style={{ color: "red" }}>Forgot Password</h1>
+            <div >
+                <p>Enter your email address to receive a link to reset your password.</p>
+                <form onSubmit={handleSubmit} style={formStyle}>
+                    <label style={labelStyle}>Email: </label>
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} style={inputStyle} />
+                    <input type="submit" value="Reset Password" style={submitButton} />
+                </form>
+                {error && <p>{error}</p>}
             </div>
         </div>
     )

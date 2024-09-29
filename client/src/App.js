@@ -17,11 +17,11 @@ import DeleteTask from "./components/tasks/delete-task";
 function App() {
   return (
     <div className="App">
-      <h1>React App</h1>
+      <h1>Task Manager App</h1>
       <BrowserRouter>  
-      <Home />       
-        <Routes>
-          <Route path="/home" element={<Home />} />
+      <Home />   
+      <div className="Components">
+      <Routes>
           <Route path="/" exact element={<SignUp />} />
           <Route path="/tasks/:id" element={<GetTask />} />
           <Route path="/tasks" element={<AllTasks />} />
@@ -33,9 +33,9 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/update-task/:id" element={<UpdateTask />} />
-        </Routes>
+         </Routes>
+         </div>          
       </BrowserRouter>
-      
     </div>
   );
 }
