@@ -29,7 +29,7 @@ export default function ForgotPassword() {
     }
 
     const bgBoxStyle = {
-      display: "flex", flexDirection: "column", width: "400px", color: "red", border: "solid #f5f5f5", margin: "3rem 0rem",
+      display: "flex", flexDirection: "column", width: "400px", border: "solid #f5f5f5", margin: "3rem 0rem",
       padding: "16px", backgroundColor: "#f5f5f5", borderRadius: "8px", boxShadow: "0px 0px 8px #f5f5f5" 
   }
     const formStyle = {
@@ -49,17 +49,15 @@ export default function ForgotPassword() {
       }
       
     return (
-        <div style={bgBoxStyle}>
-            <h1 style={{ color: "red" }}>Forgot Password</h1>
-            <div >
-                <p>Enter your email address to receive a link to reset your password.</p>
-                <form onSubmit={handleSubmit} style={formStyle}>
-                    <label style={labelStyle}>Email: </label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} style={inputStyle} />
-                    <input type="submit" value="Reset Password" style={submitButton} />
-                </form>
-                {error && <p>{error}</p>}
-            </div>
-        </div>
+      <div style={bgBoxStyle}>
+        <h1 style={{ color: "red" }}>Forgot Password</h1>
+        <p>Enter your email address to receive a link to reset your password.</p>
+        <form onSubmit={handleSubmit} style={formStyle}>
+          <label style={labelStyle}>Email: </label>
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} style={inputStyle} />
+          <input type="submit" value="Reset Password" style={submitButton} />
+        </form>
+        {error && <p>{error}</p>}
+      </div>
     )
 }
