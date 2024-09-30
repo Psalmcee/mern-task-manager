@@ -42,9 +42,9 @@ export default function CreateTask() {
     }
 
     const bgBoxStyle = {
-        width: "400px", color: "red", border: "#507661", marginTop: "8rem", marginLeft: "32px", marginRight: "32px", padding: "16px", paddingBottom: "16px", backgroundColor: "#f5f5f5", borderRadius: "8px", boxShadow: "0px 0px 8px #507661", display: "flex", flexDirection: "column" 
+        display: "flex", flexDirection: "column", width: "400px", color: "red", border: "solid #f5f5f5", margin: "3rem 0rem",
+        padding: "16px", backgroundColor: "#f5f5f5", borderRadius: "8px", boxShadow: "0px 0px 8px #507661" 
     }
-
     const boxStyle = {
         display: "flex", flexDirection: "column", margin: "12px", padding: "16px", paddingBottom: "16px", backgroundColor: "#f5f5f5", justifyContent: "center", borderRadius: "8px", color: "white"
     }
