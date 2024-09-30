@@ -16,9 +16,6 @@ app.use(express.urlencoded({ extended: false}))
 app.use(express.json());
 
 import http from 'http'
-import { Server } from 'socket.io'
-
-const server = http.createServer(app)
 
 
 app.get('/', (req: Request, res: Response) => {
@@ -35,7 +32,7 @@ app.use(errorHandlerMiddleware)
 
 const start = async () => {
     await connectDB(process.env.MONGO_URI!)
-    server.listen(port, () => {
+    app.listen(port, () => {
     console.log(`server is running on port ${port}...
     🚀@ http://localhost:${port}`)})
 }

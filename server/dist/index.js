@@ -26,8 +26,6 @@ const port = process.env.PORT || 5555;
 exports.app.use(express_1.default.static('./public'));
 exports.app.use(express_1.default.urlencoded({ extended: false }));
 exports.app.use(express_1.default.json());
-const http_1 = __importDefault(require("http"));
-const server = http_1.default.createServer(exports.app);
 exports.app.get('/', (req, res) => {
     //res.send("Mern Task Manager..");
     res.json({ message: `Connected to server 👍` });
@@ -39,7 +37,7 @@ exports.app.use(middlewares_1.notFoundMiddleware);
 exports.app.use(middlewares_1.errorHandlerMiddleware);
 const start = () => __awaiter(void 0, void 0, void 0, function* () {
     yield (0, db_1.connectDB)(process.env.MONGO_URI);
-    server.listen(port, () => {
+    exports.app.listen(port, () => {
         console.log(`server is running on port ${port}...
     🚀@ http://localhost:${port}`);
     });
